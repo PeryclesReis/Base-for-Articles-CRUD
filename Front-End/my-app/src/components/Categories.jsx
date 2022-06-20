@@ -1,9 +1,9 @@
 import React from "react";
 import Table from "./Table";
 
-function Categories() {
+function Categories(params) {
   return (
-    <Table title='Categorias'/>
+    <Table title='Categorias' params={params} />
   );
 }
 

@@ -4,11 +4,11 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import '../styles/category.css';
 
-function Category() {
+function Category(props) {
   return (
     <div className='main'>
       <Header />
-      <Categories />
+      <Categories params={props} />
       <Footer />
     </div>
   );

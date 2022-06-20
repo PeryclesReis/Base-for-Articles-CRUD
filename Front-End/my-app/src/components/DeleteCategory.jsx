@@ -1,12 +1,12 @@
 import React from "react";
 import '../styles/category.css';
 
-function UpdateArticle() {
+function DeleteCategory() {
   return (
     <div className='bg-secondary w-100 p-4 header'>
-      UpdateArticle
+      DeleteCategory
     </div>
   );
 }
 
-export default UpdateArticle;
+export default DeleteCategory;

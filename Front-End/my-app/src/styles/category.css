@@ -30,3 +30,14 @@ td {
 .footer {
   margin-top: 100px;
 }
+
+.register {
+  color: dimgray;
+  font-size: 70px;
+}
+
+.edit {
+  color: dimgray;
+  font-size: 40px;
+  padding: 0 10px;
+}
