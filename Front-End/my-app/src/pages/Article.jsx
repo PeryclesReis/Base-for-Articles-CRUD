@@ -1,11 +1,16 @@
 import React from "react";
+import Articles from "../components/Articles";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
-function Articles(params) {
+function Article(params) {
   return (
-    <div>
-      Articles
+    <div className='main'>
+      <Header />
+      <Articles />
+      <Footer />
     </div>
   );
 }
 
-export default Articles;
+export default Article;

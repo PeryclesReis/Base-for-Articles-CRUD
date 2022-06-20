@@ -1,10 +1,9 @@
 import React from "react";
+import Table from "./Table";
 
-function Categories (props) {
+function Categories() {
   return (
-    <div>
-      Categories
-    </div>
+    <Table title='Categorias'/>
   );
 }
 

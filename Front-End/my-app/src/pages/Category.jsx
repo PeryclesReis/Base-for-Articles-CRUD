@@ -1,14 +1,15 @@
 import React from "react";
 import Categories from "../components/Categories";
-import FootBar from "../components/FootBar";
-import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import '../styles/category.css';
 
-function Category (props) {
+function Category() {
   return (
-    <div>
-      <NavBar />
+    <div className='main'>
+      <Header />
       <Categories />
-      <FootBar />
+      <Footer />
     </div>
   );
 }
