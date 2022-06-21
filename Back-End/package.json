@@ -4,17 +4,18 @@
   "scripts": {
     "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
     "start": "nodemon index.js",
-    "seed": "npx sequelize-cli db:seed:all"
+    "seed": "npx sequelize-cli db:seed:all",
+    "start:debug": "nodemon start --debug --watch"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.21.0",
-    "sequelize-cli": "^6.4.1"
+    "sequelize": "^6.21.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "sequelize-cli": "^6.4.1"
   }
 }

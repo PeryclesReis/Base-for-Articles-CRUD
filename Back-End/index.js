@@ -1,6 +1,6 @@
 const express = require('express');
-const categoryRoutes = require('./routes/categoryRoutes');
 require('dotenv/config');
+const categoryRoutes = require('./routes/categoryRoutes');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use('/categories', categoryRoutes);
 
 app.use((_error, _req, res, _next) => res.status(500).json({ message: 'Something went wrong' }));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3004;
 app.listen(PORT, () => console.log(`ouvindo porta ${PORT}!`));
 
 module.exports = app;
