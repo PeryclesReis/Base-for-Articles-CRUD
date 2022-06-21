@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv/config');
 const categoryRoutes = require('./routes/categoryRoutes');
+const articlesRoutes = require('./routes/articlesRoutes');
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.get('/', (request, response) => {
 });
 
 app.use('/categories', categoryRoutes);
-// app.use('/login', loginRoutes);
+app.use('/articles', articlesRoutes);
 
 app.use((_error, _req, res, _next) => res.status(500).json({ message: 'Something went wrong' }));
 

@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Categories', {
+    return queryInterface.createTable('Articles', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,14 +9,27 @@ module.exports = {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       },
+      title: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
       description: {
         allowNull: false,
         type: DataTypes.STRING,
+      },
+      categoryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: 'categoryId',
+        references: {
+          model: 'Categories',
+          key: 'id',
+        },
       },
     });
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Categories');
+    return queryInterface.dropTable('Articles');
   }
 };

@@ -23,7 +23,8 @@ const listCategory = async (_req, res) => {
 
     return res.status(categories.code).json(categories);
   } catch (err) {
-    console.log('Algo deu errado: ' `${err}`);
+    console.log(err);
+    return res.status(500);
   }
 };
 

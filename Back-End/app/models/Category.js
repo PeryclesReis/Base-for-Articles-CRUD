@@ -3,12 +3,16 @@ module.exports = (sequelize, DataTypes) => {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     description: DataTypes.STRING,
   },
+  {
+    timestamps: false,
+  },
 );
 
-  // Category.associate = ({ Article }) => {
-  //   Category.hasMany(Article,
-  //     { foreignKey: 'categoryId', as: 'article' });
-  // };
+  Category.associate = ({ Article }) => {
+    Category.hasMany(Article, {
+      foreignKey: 'categoryId', as: 'articles'
+    });
+  };
 
   return Category;
 };

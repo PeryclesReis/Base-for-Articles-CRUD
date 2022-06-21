@@ -41,32 +41,6 @@ function Table({ title }) {
                 </Link>
               </td>
             </tr>
-            <tr className=''>
-              <td>Categoria2</td>
-              <td className='text-end'>
-                <FontAwesomeIcon
-                  className='edit'
-                  icon={ faPenSquare }
-                />
-                <FontAwesomeIcon
-                  className='edit'
-                  icon={ faTrash }
-                />
-              </td>
-            </tr>
-            <tr className=''>
-              <td>Categoria3</td>
-              <td className='text-end'>
-                <FontAwesomeIcon
-                  className='edit'
-                  icon={ faPenSquare }
-                />
-                <FontAwesomeIcon
-                  className='edit'
-                  icon={ faTrash }
-                />
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
