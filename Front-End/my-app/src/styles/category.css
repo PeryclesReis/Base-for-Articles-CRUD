@@ -41,3 +41,26 @@ td {
   font-size: 40px;
   padding: 0 10px;
 }
+
+.update-categ {
+  height: 50vh;
+  padding: 50px;
+}
+
+.update-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.update-content-title {
+}
+
+.update-content-input {
+  font-size: large;
+  padding: 20px;
+}
+
+.update-content-btn {
+  padding: 0 20px;
+}

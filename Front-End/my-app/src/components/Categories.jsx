@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import CategoryContext from "../provider/CategoryContext";
 import Table from "./Table";
 
-function Categories(params) {
+function Categories() {
+  const { categories } = useContext(CategoryContext);
+
   return (
-    <Table title='Categorias' params={params} />
+    <Table title='Categorias' params={categories} />
   );
 }
 

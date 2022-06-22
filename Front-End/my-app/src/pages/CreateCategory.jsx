@@ -1,16 +1,17 @@
 import React from "react";
-import Articles from "../components/Articles";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import NewCategory from "../components/NewCategory";
+import '../styles/category.css';
 
-function Article(params) {
+function CreateCategory() {
   return (
     <div className='main'>
       <Header />
-      <Articles params={params}/>
+      <NewCategory props="Cadastrar nova Categoria" />
       <Footer />
     </div>
   );
 }
 
-export default Article;
+export default CreateCategory;
