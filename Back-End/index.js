@@ -1,15 +1,15 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+var cors = require('cors')
 require('dotenv/config');
+
 const categoryRoutes = require('./routes/categoryRoutes');
 const articlesRoutes = require('./routes/articlesRoutes');
 
 const app = express();
-
-app.use(express.json());
-
-app.get('/', (request, response) => {
-  response.json('Oi');
-});
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/categories', categoryRoutes);
 app.use('/articles', articlesRoutes);
