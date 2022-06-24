@@ -19,22 +19,26 @@ function ArticleDetails(params) {
   if (!data) return (<h1>Loading...</h1>);
 
   return (
-    <div className='main'>
+    <div className='main w-100'>
       <Header />
-      <div className="">
-        <h1>{data.title}</h1>
-        <p>
-          {data.description}
-        </p>
-        <Link to='/'>
-            <button
-              id="back"
-              type="button"
-              className="btn btn-secondary me-2 px-3"
-            >
-              Voltar
-            </button>
-          </Link>
+      <div className="content-article-details w-75 m-auto">
+        <div className="titles-article-details">
+          <h1 className="my-5">{data.title}</h1>
+          <p className="my-3">
+            {data.description}
+          </p>
+        </div>
+        <div>
+          <Link to='/'>
+              <button
+                id="back"
+                type="button"
+                className="btn btn-back ms-2 px-3"
+              >
+                Voltar
+              </button>
+            </Link>
+        </div>
       </div>
       <Footer />
     </div>

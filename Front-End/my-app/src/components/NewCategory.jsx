@@ -9,7 +9,7 @@ function NewCategory({ props, params }) {
 
   const handleClick = async ({ target }) => {
     if (target.id === 'save' && props === 'Editar Categoria') {
-      const id = params.match.params.id.split(':')[1];
+      const id = params.match.params.id;
       await updateCategory({id ,description});
     } else {
       await createCategory({description});
@@ -35,7 +35,7 @@ function NewCategory({ props, params }) {
             <button
               id="back"
               type="button"
-              className="btn btn-secondary me-2 px-3"
+              className="btn btn-back me-2 px-3"
             >
               Voltar
             </button>
@@ -44,7 +44,7 @@ function NewCategory({ props, params }) {
             <button
               id="save"
               type="button"
-              className="btn btn-primary ms-2 px-3"
+              className="btn btn-save ms-2 px-3"
               onClick={ handleClick }
             >
               Salvar

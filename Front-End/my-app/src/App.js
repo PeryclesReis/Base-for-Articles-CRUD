@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/category/create" component={ CreateCategory } />
         <Route exact path="/category/edit/:id" component={ UpdateCategory } />
         <Route exact path="/article/create" component={ CreateArticle } />
-        <Route exact path="/article/edit/:category" component={ UpdateArticle } />
+        <Route exact path="/article/edit/:article" component={ UpdateArticle } />
         <Route exact path="/category/:id/articles" component={ Article } />
         <Route exact path="/category/:category/article/details/:id" component={ ArticleDetails } />
         <Route path="/" component={ Category } />

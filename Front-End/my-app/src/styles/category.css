@@ -7,16 +7,23 @@ td {
   padding: 20px 50px;
 }
 
+a {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  text-decoration: none;
   width: 100%;
 }
 
 .header {
-
+  background-color: gainsboro;
 }
 
 .content {
@@ -28,16 +35,17 @@ td {
 }
 
 .footer {
+  background-color: gainsboro;
   margin-top: 100px;
 }
 
 .register {
-  color: dimgray;
+  color: rgb(238, 54, 146);
   font-size: 70px;
 }
 
 .edit {
-  color: dimgray;
+  color: rgb(155, 155, 155);
   font-size: 40px;
   padding: 0 10px;
 }
@@ -53,6 +61,19 @@ td {
   width: 50%;
 }
 
+.btn-back {
+  background-color: gainsboro;
+  font-size: large;
+  font-weight: 800;
+}
+
+.btn-save {
+  background-color: rgb(238, 54, 146);
+  color: aliceblue;
+  font-size: large;
+  font-weight: 800;
+}
+
 .update-content-title {
 }
 
@@ -63,4 +84,17 @@ td {
 
 .update-content-btn {
   padding: 0 20px;
+}
+
+.content-article-details {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-between;
+}
+
+.titles-article-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

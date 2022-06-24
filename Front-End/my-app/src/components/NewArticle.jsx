@@ -59,7 +59,7 @@ function NewArticle({ props }) {
             <button
               id="back"
               type="button"
-              className="btn btn-secondary me-2 px-3"
+              className="btn btn-back me-2 px-3"
             >
               Voltar
             </button>
@@ -68,7 +68,7 @@ function NewArticle({ props }) {
             <button
               id="save"
               type="button"
-              className="btn btn-primary ms-2 px-3"
+              className="btn btn-save ms-2 px-3"
               onClick={ handleClick }
             >
               Salvar

@@ -10,6 +10,7 @@ function EditArticle({ props, params }) {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [categoryId, setCategoryId] = useState();
+  const [articleData, setData] = useState();
 
   useEffect(() => {
     axios.get(`http://localhost:3004/categories`)
@@ -17,11 +18,18 @@ function EditArticle({ props, params }) {
         serCategories(data.data.result)
       })
       .catch(console.error);
+
+      const id = params.match.params.article;
+      axios.get(`http://localhost:3004/articles/${id}`)
+        .then((data) => {
+          setData(data.data.result);
+        })
+        .catch(console.error);
   }, []);
 
   const handleClick = async ({ target }) => {
     if (target.id === 'save') {
-      const id = params.match.params.category;
+      const id = params.match.params.article;
       await updateArticle({id, title, description, categoryId: Number(categoryId)});
     }
   }
@@ -29,6 +37,8 @@ function EditArticle({ props, params }) {
   const handleChange = ({ target: { value } }) => {
     setCategoryId(value);
   };
+
+  if (!articleData) return (<h1>Loading...</h1>)
 
   return (
     <div className="update-categ">
@@ -40,16 +50,21 @@ function EditArticle({ props, params }) {
             type="text"
             className="form-control fs-5"
             id="descriptionInput1"
-            placeholder="Exemplo: Artigo 1"
+            placeholder={articleData.title}
             onChange={ ({ target }) => setTitle(target.value) }
           />
           <div className="my-3">
             <label htmlFor="exampleFormControlTextarea1" className="form-label">Descrição</label>
-            <textarea className="form-control" rows="5" onChange={ ({ target }) => setDescription(target.value) }></textarea>
+            <textarea
+              rows="5"
+              className="form-control"
+              placeholder={articleData.description}
+              onChange={ ({ target }) => setDescription(target.value) }
+            />
           </div>
           <label htmlFor="exampleFormControlInput2" className="form-label">Categoria</label>
           <select className="form-select" onChange={ handleChange }>
-            <option value="select">Selecione uma categoria</option>
+            <option value="select">Selecione a nova categoria</option>
             {categories.map((elem) =>
               <option key={elem.id} value={elem.id}>{elem.description}</option>
             )}
@@ -60,7 +75,7 @@ function EditArticle({ props, params }) {
             <button
               id="back"
               type="button"
-              className="btn btn-secondary me-2 px-3"
+              className="btn btn-back me-2 px-3"
             >
               Voltar
             </button>
@@ -69,7 +84,7 @@ function EditArticle({ props, params }) {
             <button
               id="save"
               type="button"
-              className="btn btn-primary ms-2 px-3"
+              className="btn btn-save ms-2 px-3"
               onClick={ handleClick }
             >
               Salvar

@@ -50,7 +50,7 @@ function Table({ title }) {
                     </Link>
                   </td>
                   <td className='text-end'>
-                    <Link to={`/category/edit/:${elem.id}`}>
+                    <Link to={`/category/edit/${elem.id}`}>
                       <FontAwesomeIcon
                         className='edit btn'
                         icon={ faPenSquare }

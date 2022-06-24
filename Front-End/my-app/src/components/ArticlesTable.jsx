@@ -75,7 +75,7 @@ function Table({ title, params: { params } }) {
           <button
             id="back"
             type="button"
-            className="btn btn-secondary mt-4 px-5 py-2"
+            className="btn btn-back mt-4 px-4 py-2"
           >
             Voltar
           </button>
