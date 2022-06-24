@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-import ArticleContext from "../provider/ArticleContext";
-import Table from "./Table";
+import React from "react";
+import ArticlesTable from "./ArticlesTable";
 
-function Articles() {
-  const { articles } = useContext(ArticleContext);
-
+function Articles(props) {
   return (
-    <Table title='Artigos' params={ articles } />
+    <ArticlesTable title='Artigos' params={props} />
   );
 }
 

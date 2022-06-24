@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import ArticleContext from "../provider/ArticleContext";
 import '../styles/category.css';
 
-function NewArticle({ props }) {
-  const { createArticle } = useContext(ArticleContext);
+function EditArticle({ props, params }) {
+  const { updateArticle } = useContext(ArticleContext);
   const [categories, serCategories] = useState([]);
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
@@ -21,7 +21,8 @@ function NewArticle({ props }) {
 
   const handleClick = async ({ target }) => {
     if (target.id === 'save') {
-      await createArticle({id: categoryId, title, description});
+      const id = params.match.params.category.split(':')[1];
+      await updateArticle({id, title, description, categoryId});
     }
   }
 
@@ -80,4 +81,4 @@ function NewArticle({ props }) {
   );
 }
 
-export default NewArticle;
+export default EditArticle;

@@ -16,6 +16,14 @@ const getOneArticle = async (id) => {
   };
 };
 
+const getArticlesByCategory = async (id) => {
+  return {
+    message: 'Artigos encontrada',
+    code: 200,
+    result: await Article.findAll({ where: { categoryId: id } }),
+  };
+};
+
 const getArticle = async () => {
   return {
     message: 'Articles',
@@ -27,7 +35,7 @@ const getArticle = async () => {
 const updateArticle = async (id, title, description, category) => {
   const { result } = await getOneArticle(id);
 
-  if (!result) return {
+  if (!result.dataValues) return {
     code: 204,
     message: 'Artigo não existe!',
   };
@@ -61,6 +69,8 @@ const deleteArticle = async (id) => {
 module.exports = {
   createArticle,
   getArticle,
+  getOneArticle,
+  getArticlesByCategory,
   updateArticle,
   deleteArticle,
 };

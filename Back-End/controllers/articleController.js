@@ -3,6 +3,8 @@ const {
   getArticle,
   updateArticle,
   deleteArticle,
+  getOneArticle,
+  getArticlesByCategory,
 } = require('../services/articleService');
 
 const addArticle= async (req, res) => {
@@ -18,9 +20,23 @@ const listArticle = async (_req, res) => {
   return res.status(articles.code).json(articles);
 };
 
+const article = async (req, res) => {
+  const { id } = req.params;
+
+  const result = await getOneArticle(id);
+  return res.status(result.code).json(result);
+};
+
+const articlesByCategory = async (req, res) => {
+  const { category } = req.params;
+
+  const result = await getArticlesByCategory(category);
+  return res.status(200).json(result);
+};
+
 const upArticle = async (req, res) => {
   const { id } = req.params;
-  const { title, description, categoryId } = req.body;
+  const { title, description, id: categoryId } = req.body;
 
   const newArticle = await updateArticle(id, title, description, categoryId);
   return res.status(newArticle.code).json(newArticle);
@@ -34,8 +50,10 @@ const removeArticle = async (req, res) => {
 };
 
 module.exports = {
+  article,
   addArticle,
   listArticle,
+  articlesByCategory,
   upArticle,
   removeArticle,
 };

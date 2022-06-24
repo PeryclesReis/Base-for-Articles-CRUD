@@ -1,21 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faPenSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import CategoryContext from "../provider/CategoryContext";
-import ArticleContext from "../provider/ArticleContext";
 import '../styles/category.css';
 
-function Table({ title, params }) {
+function Table({ title }) {
   const { removeCategory } = useContext(CategoryContext);
-  const { removeArticle } = useContext(ArticleContext);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3004/categories')
+      .then((data) => {
+        setData(data.data.result)
+      })
+      .catch(console.error);
+  }, []);
 
   const handleClick = async ({target}) => {
-    if (title === 'Categorias') {
-      await removeCategory(target.parentNode.id);
-    } else if (title === 'Artigos') {
-      await removeArticle(target.parentNode.id);
-    }
+    await removeCategory(target.parentNode.id);
+    window.location.reload(true);
   }
 
   return (
@@ -26,7 +31,7 @@ function Table({ title, params }) {
             <tr>
               <th className='py-5 fs-1'>{title}</th>
               <th className='py-5 fs-3 text-end'>
-                <Link to={`/${title === 'Categorias' ? 'category' : 'article'}/create`}>
+                <Link to='/category/create'>
                   <FontAwesomeIcon
                     className='register'
                     icon={ faPlusCircle }
@@ -36,12 +41,16 @@ function Table({ title, params }) {
             </tr>
           </thead>
           <tbody className='bg-light border border-white shadow'>
-            { params.map((elem, index) => {
+            { data.map((elem, index) => {
               return (
                 <tr key={index}>
-                  <td>{ elem.description }</td>
+                  <td>
+                    <Link to={`/category/${elem.id}/articles`}>
+                      { elem.description }
+                    </Link>
+                  </td>
                   <td className='text-end'>
-                    <Link to={`/${title === 'Categorias' ? 'category' : 'article'}/edit/:${elem.id}`}>
+                    <Link to={`/category/edit/:${elem.id}`}>
                       <FontAwesomeIcon
                         className='edit btn'
                         icon={ faPenSquare }

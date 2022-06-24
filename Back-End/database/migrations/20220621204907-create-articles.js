@@ -21,6 +21,8 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull: false,
         field: 'categoryId',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
         references: {
           model: 'Categories',
           key: 'id',

@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-import CategoryContext from "../provider/CategoryContext";
-import Table from "./Table";
+import React from "react";
+import CategoryTable from "./CategoryTable";
 
 function Categories() {
-  const { categories } = useContext(CategoryContext);
-
   return (
-    <Table title='Categorias' params={categories} />
+    <CategoryTable title='Categorias'/>
   );
 }
 
