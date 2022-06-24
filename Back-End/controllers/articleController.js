@@ -36,9 +36,8 @@ const articlesByCategory = async (req, res) => {
 
 const upArticle = async (req, res) => {
   const { id } = req.params;
-  const { title, description, id: categoryId } = req.body;
 
-  const newArticle = await updateArticle(id, title, description, categoryId);
+  const newArticle = await updateArticle(id, req.body);
   return res.status(newArticle.code).json(newArticle);
 };
 

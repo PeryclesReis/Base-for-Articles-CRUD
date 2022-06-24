@@ -32,7 +32,7 @@ const getArticle = async () => {
   };
 };
 
-const updateArticle = async (id, title, description, category) => {
+const updateArticle = async (id, data) => {
   const { result } = await getOneArticle(id);
 
   if (!result.dataValues) return {
@@ -44,7 +44,7 @@ const updateArticle = async (id, title, description, category) => {
     message: 'Artigo atualizado com sucesso!',
     code: 201,
     result: await Article.update(
-      { title, description, categoryId: category },
+      { ...data },
       { where: { id } },
     ),
   };
