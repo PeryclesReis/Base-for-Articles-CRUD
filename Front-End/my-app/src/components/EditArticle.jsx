@@ -21,8 +21,8 @@ function EditArticle({ props, params }) {
 
   const handleClick = async ({ target }) => {
     if (target.id === 'save') {
-      const id = params.match.params.category.split(':')[1];
-      await updateArticle({id, title, description, categoryId});
+      const id = params.match.params.category;
+      await updateArticle({id, title, description, categoryId: Number(categoryId)});
     }
   }
 

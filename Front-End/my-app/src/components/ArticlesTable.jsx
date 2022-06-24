@@ -52,7 +52,7 @@ function Table({ title, params: { params } }) {
                     </Link>
                   </td>
                   <td className='text-end'>
-                    <Link to={`/article/edit/:${elem.id}`}>
+                    <Link to={`/article/edit/${elem.id}`}>
                       <FontAwesomeIcon
                         className='edit btn'
                         icon={ faPenSquare }

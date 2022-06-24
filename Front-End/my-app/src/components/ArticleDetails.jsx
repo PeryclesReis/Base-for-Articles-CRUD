@@ -16,7 +16,7 @@ function ArticleDetails(params) {
       .catch(console.error);
   }, []);
 
-  if (!data) return (<h1>Loading...</h1>)
+  if (!data) return (<h1>Loading...</h1>);
 
   return (
     <div className='main'>
