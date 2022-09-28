@@ -36,7 +36,7 @@ O principal objetivo do projeto é criar um web app onde o usuário possa cadast
 ### Como rodar o projeto:
 
 > Etapa 1:
-- Abra o arquivo database.js dentro da pasta `/FullStack-BIUD/Back-End/config/database.js` e configure-o para estabelecer a conexão com o bando de dados.
+- Abra o arquivo database.js dentro da pasta `/Base-for-Articles-CRUD/Back-End/config/database.js` e configure-o para estabelecer a conexão com o bando de dados.
 
 ```js script
 module.exports = {
@@ -50,10 +50,10 @@ module.exports = {
 }
 ```
 > Etapa 2:
-- A partir da pasta raiz `/FullStack-BIUD`, abra o terminal e entre na pasta `../FullStack-BIUD/Back-End` e rode os comandos `npm install` e `npm start` para instalar as dependencias e rodar a api que da acesso aos dados.
+- A partir da pasta raiz `/Base-for-Articles-CRUD`, abra o terminal e entre na pasta `../Base-for-Articles-CRUD/Back-End` e rode os comandos `npm install` e `npm start` para instalar as dependencias e rodar a api que da acesso aos dados.
 
 > Etapa 3:
-- Abra uma nova janela do seu terminal e a partir da pasta raiz `/FullStack-BIUD`, navegue até a pasta do Front-End `../FullStack-BIUD/Front-End/my-app` e rode os comandos `npm install` e `npm start` para instalar as dependencias e começar a renderizar o Front-End na web.
+- Abra uma nova janela do seu terminal e a partir da pasta raiz `/Base-for-Articles-CRUD`, navegue até a pasta do Front-End `../Base-for-Articles-CRUD/Front-End/my-app` e rode os comandos `npm install` e `npm start` para instalar as dependencias e começar a renderizar o Front-End na web.
 
 ### Autor:
 
