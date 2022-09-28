@@ -17,7 +17,7 @@ O principal objetivo do projeto é criar um web app onde o usuário possa cadast
 
 - Front-end: ReactJS
 - Back-end: NodeJS + ExpressJS + Sequelize + MySQL
-- (Extra): React Bootstrap + Bootstrap + fortawesome
+- (Extra): React Bootstrap + Bootstrap + fontAwesome
 
 ---
 
