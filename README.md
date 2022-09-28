@@ -1,4 +1,4 @@
-# Desafio Técnico Squad de TI
+# Base para Artigos (CRUD)
 
 O principal objetivo do projeto é criar um web app onde o usuário possa cadastrar categorias e, posteriormente cadastrar, artigos vinculados a essas categorias.
 
